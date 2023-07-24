@@ -2,22 +2,76 @@
 <html>
 <head>
     <title>Jogo da Cobrinha</title>
-<style>
-body, html {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body, html {
             margin: 0;
             padding: 0;
+            background-color: #787878;
             overflow: hidden;
-            background-color: black;
+        }
+        #stage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            
+        }
+        #btnPararAudio {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 60px;
+            height: 60px;
+            background-color: #787878;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            z-index: 2;
+            font-size: 24px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
+        #pontuacao{
+            background-color:#787878;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 60px;
+            height: 60px;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-</style>
-   
+        
+    </style>
 </head>
 <body>
-    <canvas id="stage" ></canvas>
+    <canvas id="stage"></canvas>
 
+    <audio id="audio" preload="auto">
+        <source src="/fundo_cobrinha.mp3" type="audio/mpeg">
+        <!-- Adicione outros formatos do arquivo de áudio aqui, como ogg ou wav, para compatibilidade com diferentes navegadores -->
+    </audio>
+
+    <audio id="Comer" preload="auto">
+        <source src="/comer.mp3" type="audio/mpeg">
+        <!-- Adicione outros formatos do arquivo de áudio aqui, como ogg ou wav, para compatibilidade com diferentes navegadores -->
+    </audio>
+
+    <button id="btnPararAudio"><i class="fas fa-volume-up"></i></button>
+
+    <div id="pontuacao">0#</div>
+    
     <script src="js/snake.js"></script>
+    <script src="https://kit.fontawesome.com/26a16e220c.js" crossorigin="anonymous"></script>
+    
 </body>
 </html>
 
